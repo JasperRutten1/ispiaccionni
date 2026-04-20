@@ -29,7 +29,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="mx-20 bg-gray-500 p-10 flex flex-col gap-2 text-lg">
+      <div className="mx-20 bg-gray-500 p-10 flex flex-col gap-2 text-lg rounded-md">
         <p>
           Welkom, wakkere burger. 🕊️
         </p>
