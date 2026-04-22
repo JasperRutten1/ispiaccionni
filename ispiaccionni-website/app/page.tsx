@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HomeClayEntry } from "@/components/HomeClayEntry";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function Home() {
@@ -16,7 +17,8 @@ export default function Home() {
         />
       </div>
 
-      <div className="mx-20 bg-gray-500 p-10 flex flex-col gap-2 text-lg rounded-md">
+      <div className="relative mx-20 bg-gray-500 p-10 flex flex-col gap-2 text-lg rounded-md">
+        <HomeClayEntry />
         <p>
           Welkom, wakkere burger. 🕊️
         </p>
