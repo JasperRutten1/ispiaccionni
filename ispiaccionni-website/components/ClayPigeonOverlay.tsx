@@ -12,8 +12,8 @@ const VANISH_X = CANVAS_W * 0.5;
 const HORIZON_Y = CANVAS_H * 0.54;
 const CLAY_IMG_SRC = "/game/clay-pigeon.svg";
 const PIGEON_GLIDE_SRC = "/game/pigeon-glide.svg";
-const CLAY_DRAW_W = 58;
-const CLAY_DRAW_H = 36;
+const CLAY_DRAW_W = 76;
+const CLAY_DRAW_H = 48;
 
 type LevelConfig = {
   quota: number;
