@@ -21,8 +21,8 @@ export function HomeClayEntry({ children }: Props) {
       <div className="relative mx-20 flex flex-col gap-2 rounded-md bg-gray-500 p-10 text-lg">
         <button
           type="button"
-          aria-label="Open clay pigeon shooting"
-          title="Clay pigeon shooting"
+          aria-label="Open kleiduif schieten"
+          title="Kleiduif schieten"
           onClick={() => setClayOpen(true)}
           className="absolute bottom-3 right-4 h-3 w-5 cursor-pointer rounded-full border border-amber-950/50 bg-gradient-to-br from-amber-200 via-orange-500 to-orange-900 opacity-[0.22] shadow-sm transition-opacity hover:opacity-80 focus-visible:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
         />

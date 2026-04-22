@@ -36,6 +36,24 @@ const LEVELS: LevelConfig[] = [
   { quota: 9, maxSimultaneous: 3, spawnIntervalMs: 1250, speed: 4.0, hitSlop: 28 },
 ];
 
+/** Subtitle on level clear; index = level just cleared minus 1 (levels 1–9). Gets more unhinged. */
+const LEVEL_CLEARED_LINES = [
+  "De schijven weten nu dat jij kijkt. Blijf kijken.",
+  "Eén schijf minder in het archief ‘totaal normale hobby’. Toeval? Nee.",
+  "De A.S.U. update downloadt nu waarschijnlijk iets. Doe alsof je dat niet merkt.",
+  "Je treffers staan in een spreadsheet ergens in Zoetermeer. Waarschijnlijk vetgedrukt. Met rood potlood.",
+  "De duiven op het dak doen alsof ze niets gehoord hebben. Eén knikje te veel. Wij zien het.",
+  "Ministerie van Schijnveiligheid stuurt je een neutrale emoji. Dat is geen rust — dat is protocol.",
+  "Big Clay belt niet terug. De lijn is ‘dood’, maar de lijn kijkt terug. Logisch.",
+  "Er is nu een tweede werkelijkheid waar jij de schijven wél raakt. De eerste werkelijkheid doet alsof die pijn heeft.",
+  "De horizon fluistert je naam, daarna je BSN, daarna ‘broodkruimel’. Sluit het gordijn. Nee, het andere. Beide.",
+] as const;
+
+function levelClearedSubtitle(clearedLevel: number): string {
+  const i = Math.min(Math.max(clearedLevel - 1, 0), LEVEL_CLEARED_LINES.length - 1);
+  return LEVEL_CLEARED_LINES[i] ?? LEVEL_CLEARED_LINES[LEVEL_CLEARED_LINES.length - 1]!;
+}
+
 /**
  * Clay flies down-range: progress 0 → 1.
  * Vertical path is a quadratic Bezier (launch → apex → end) so the disc rises first, then falls.
@@ -313,8 +331,8 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
         ctx.font = "bold 18px system-ui, sans-serif";
         ctx.textAlign = "left";
         ctx.fillText(`Level ${level} / 10`, 12, 26);
-        ctx.fillText(`Hits: ${hits} / ${cfg.quota}`, 12, 48);
-        ctx.fillText(`Lives: ${livesLeft}`, 12, 70);
+        ctx.fillText(`Treffers: ${hits} / ${cfg.quota}`, 12, 48);
+        ctx.fillText(`Levens: ${livesLeft}`, 12, 70);
       };
 
       const drawFrame = (now: number) => {
@@ -461,7 +479,7 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
     >
       <div className="flex w-full max-w-[min(100%,440px)] items-center justify-between gap-2">
         <h2 id="clay-title" className="text-lg font-semibold text-amber-50">
-          Clay pigeon shooting
+          Kleiduif schieten
         </h2>
         <button
           ref={closeRef}
@@ -469,17 +487,28 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
           onClick={onClose}
           className="rounded-md border border-amber-200/40 bg-zinc-900 px-3 py-1.5 text-sm text-amber-50 hover:bg-zinc-800"
         >
-          Close
+          Sluiten
         </button>
       </div>
 
       {screen === "menu" && (
         <div className="flex max-w-[min(100%,440px)] flex-col items-center gap-6 rounded-lg border-2 border-black bg-zinc-900/95 p-8 text-center shadow-lg">
-          <p className="text-amber-100/90">
-            First-person view: clays arc up, then fall away into the distance. Shoot them before
-            they shrink into the sky. You have three lives for the whole run. Ten levels — good
-            luck.
-          </p>
+          <div className="flex flex-col gap-3 text-sm leading-relaxed text-amber-100/95">
+            <p>
+              De overheid wil dat je denkt dat kleiduiven “onschuldige schijfjes” zijn.
+              Onzin. Het zijn afleidingskoekjes uit het depot van het Ministerie van Schijnveiligheid
+              — eerst vliegen ze brutaal omhoog (klassieke misleidingsboog), daarna duiken ze weg
+              richting de horizon waar het dossier heet: <em>nooit gebeurd</em>.
+            </p>
+            <p>
+              Richt je muis alsof het een anti-A.S.U.-kijker is: klik de schijven stuk voordat ze in
+              de verte oplossen. Drie levens voor de hele run, tien levels. Als je mist, is dat
+              precies wat ZIJ willen.
+            </p>
+            <p className="text-amber-200/90">
+              Spoiler: dit is géén side quest van Big Clay. Of jawel. Wie zal het zeggen.
+            </p>
+          </div>
           <button
             type="button"
             onClick={startRun}
@@ -502,35 +531,41 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
 
           {screen === "levelDone" && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-lg bg-black/55 p-4 text-center">
-              <p className="text-xl font-bold text-amber-50">Level {level} cleared</p>
+              <p className="text-xl font-bold text-amber-50">Level {level} gehaald</p>
+              <p className="max-w-sm px-2 text-sm leading-snug text-amber-100/90">
+                {levelClearedSubtitle(level)}
+              </p>
               <button
                 type="button"
                 onClick={nextLevel}
                 className="rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-black hover:bg-amber-400"
               >
-                Next level
+                Volgende level
               </button>
             </div>
           )}
 
           {screen === "dead" && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-lg bg-black/55 p-4 text-center">
-              <p className="text-xl font-bold text-amber-50">Game over</p>
-              <p className="text-amber-100">A pigeon got away one time too many.</p>
+              <p className="text-xl font-bold text-amber-50">Afgelopen</p>
+              <p className="max-w-xs text-amber-100">
+                Een schijf is ontsnapt. Of was het een drone met een kleiduivenpakje aan? Toch maar
+                jammer.
+              </p>
               <div className="flex flex-wrap justify-center gap-2">
                 <button
                   type="button"
                   onClick={restartAfterDeath}
                   className="rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-black hover:bg-amber-400"
                 >
-                  Restart
+                  Opnieuw
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
                   className="rounded-md border border-amber-200/50 px-4 py-2 text-sm text-amber-50 hover:bg-white/10"
                 >
-                  Close
+                  Sluiten
                 </button>
               </div>
             </div>
@@ -538,22 +573,25 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
 
           {screen === "victory" && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-lg bg-black/55 p-4 text-center">
-              <p className="text-xl font-bold text-amber-50">You cleared all 10 levels</p>
-              <p className="text-amber-100">Skeet legend.</p>
+              <p className="text-xl font-bold text-amber-50">Alle tien levels gekraakt</p>
+              <p className="max-w-xs text-amber-100">
+                Je hebt de schijnveiligheidsschijven verslagen. De duiven knikken nu <em>nóg</em>{" "}
+                verdachter. Dat is respect.
+              </p>
               <div className="flex flex-wrap justify-center gap-2">
                 <button
                   type="button"
                   onClick={startRun}
                   className="rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-black hover:bg-amber-400"
                 >
-                  Play again
+                  Nog een keer
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
                   className="rounded-md border border-amber-200/50 px-4 py-2 text-sm text-amber-50 hover:bg-white/10"
                 >
-                  Close
+                  Sluiten
                 </button>
               </div>
             </div>
@@ -563,12 +601,12 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
 
       {screen === "play" && (
         <p className="max-w-md text-center text-sm text-amber-100/90">
-          Aim down-range; click to shoot. Escape closes this window.
+          Richt naar het veld, klik om te schieten. Escape sluit dit luik.
         </p>
       )}
 
       {screen === "menu" && (
-        <p className="max-w-md text-center text-sm text-amber-100/90">Escape closes this window.</p>
+        <p className="max-w-md text-center text-sm text-amber-100/90">Escape sluit dit venster.</p>
       )}
     </div>
   );
