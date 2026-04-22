@@ -18,7 +18,7 @@ export function HomeClayEntry({ children }: Props) {
   return (
     <>
       <ClayPigeonOverlay open={clayOpen} onClose={() => setClayOpen(false)} />
-      <div className="relative mx-20 flex flex-col gap-2 rounded-md bg-gray-500 p-10 text-lg">
+      <div className="relative flex flex-col gap-5 py-5 text-lg">
         <button
           type="button"
           aria-label="Open kleiduif schieten"

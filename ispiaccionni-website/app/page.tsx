@@ -1,3 +1,4 @@
+import { HomeClayEntry } from "@/components/HomeClayEntry";
 import Image from "next/image";
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
     <main className="mx-5 lg:mx-20 my-10 rounded-md bg-gray-800 p-10 text-white">
       <div className="w-full flex justify-center flex-wrap gap-2">
         <Image
-          className="border-solid border-2 border-black rounded-md max-w-50"
+          className="border-solid border-2 border-black rounded-md w-50"
           src="/images/wip.jpeg"
           width={500} 
           height={500}
@@ -13,7 +14,7 @@ export default function Home() {
         />
 
         <Image
-          className="border-solid border-2 border-black rounded-md max-w-50"
+          className="border-solid border-2 border-black rounded-md w-50"
           src="/images/pigeon-vibes.gif"
           width={500}
           height={500}
@@ -21,9 +22,7 @@ export default function Home() {
         />
       </div>
 
-      
-
-      <div className="my-5 flex flex-col gap-2">
+      <HomeClayEntry>
         <p>
           Welkom, wakkere burger. 🕊️
         </p>
@@ -58,8 +57,8 @@ export default function Home() {
           Blijf kijken. Word wakker! Vertrouw niemand!
           Vooral geen duif die je recht aankijkt.
         </p>
-        
-      </div>
+
+      </HomeClayEntry>
     </main>
   );
 }
