@@ -36,8 +36,8 @@ export function SiteHeader() {
             <Link href="/duivenkot" className="text-amber-100 hover:text-white">
               Duivenkot
             </Link>
-            <Link href="/contact" className="text-amber-100 hover:text-white">
-              Contact
+            <Link href="/activiteiten" className="text-amber-100 hover:text-white">
+              Activiteiten
             </Link>
           </nav>
         </div>

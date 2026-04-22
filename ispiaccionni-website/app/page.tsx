@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="mx-5 lg:mx-20 my-10 rounded-md bg-gray-800 p-10 text-white">
+    <main className="mx-5 lg:mx-15 my-10 rounded-md bg-gray-800 p-5 lg:p-10 text-white">
       <div className="w-full flex justify-center flex-wrap gap-2">
         <Image
           className="border-solid border-2 border-black rounded-md w-50"
