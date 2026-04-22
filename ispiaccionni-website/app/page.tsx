@@ -1,14 +1,11 @@
 import Image from "next/image";
-import { SiteHeader } from "@/components/SiteHeader";
 
 export default function Home() {
   return (
-    <main>
-      <SiteHeader />
-
-      <div className="w-full flex justify-center">
+    <main className="mx-5 lg:mx-20 my-10 rounded-md bg-gray-800 p-10 text-white">
+      <div className="w-full flex justify-center flex-wrap gap-2">
         <Image
-          className="border-solid border-2 border-black rounded-md m-5 w-50"
+          className="border-solid border-2 border-black rounded-md max-w-50"
           src="/images/wip.jpeg"
           width={500} 
           height={500}
@@ -16,7 +13,7 @@ export default function Home() {
         />
 
         <Image
-          className="border-solid border-2 border-black rounded-md m-5 w-50"
+          className="border-solid border-2 border-black rounded-md max-w-50"
           src="/images/pigeon-vibes.gif"
           width={500}
           height={500}
@@ -26,7 +23,7 @@ export default function Home() {
 
       
 
-      <div className="mx-20 bg-gray-500 p-10 flex flex-col gap-2 text-lg rounded-md">
+      <div className="my-5 flex flex-col gap-2">
         <p>
           Welkom, wakkere burger. 🕊️
         </p>
