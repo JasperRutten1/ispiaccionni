@@ -9,12 +9,22 @@ export default function Home() {
       <div className="w-full flex justify-center">
         <Image
           className="border-solid border-2 border-black rounded-md m-5 w-50"
+          src="/images/wip.jpeg"
+          width={500} 
+          height={500}
+          alt="Pigeons are a lie"
+        />
+
+        <Image
+          className="border-solid border-2 border-black rounded-md m-5 w-50"
           src="/images/pigeon-vibes.gif"
           width={500}
           height={500}
           alt="Pigeons are a lie"
         />
       </div>
+
+      
 
       <div className="mx-20 bg-gray-500 p-10 flex flex-col gap-2 text-lg rounded-md">
         <p>
