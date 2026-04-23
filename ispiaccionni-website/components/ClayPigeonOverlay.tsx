@@ -136,9 +136,11 @@ export function ClayPigeonOverlay({ open, onClose }: Props) {
 
   useEffect(() => {
     if (!open) {
-      setScreen("menu");
-      setLevel(1);
-      livesRef.current = 3;
+      queueMicrotask(() => {
+        setScreen("menu");
+        setLevel(1);
+        livesRef.current = 3;
+      });
     }
   }, [open]);
 
