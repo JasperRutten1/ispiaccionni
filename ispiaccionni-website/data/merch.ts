@@ -37,10 +37,11 @@ export const MERCH_CATALOG: MerchItem[] = [
     id: 2,
     title: "T-shirt basis logo",
     shortDescription:
-      "Zacht katoen. Harde boodschap. Perfect om te knielen bij het voederen van ‘duiven’.",
+      "Zwaar katoen, frontprint met duif-in-zonnebril, kabelmotief en ‘I Spiaccionni’-typo. Klaar om te knielen bij het voederen van ‘duiven’.",
     votes: 10,
     category: "Kleding",
-    imagePrompt: "flat lay black t-shirt merchandise pigeon conspiracy funny print mockup",
+    imagePrompt:
+      "Ultra detailed black heavyweight cotton t-shirt flat lay weathered wood, intricate screen print pigeon in aviator shades CCTV glints in lenses, tangled power lines USB cord border cracked eggshell frame distressed newsprint collage, woven label Mistrust, moody rim light shallow DOF premium streetwear catalog 8k",
   },
   {
     id: 3,
@@ -73,10 +74,11 @@ export const MERCH_CATALOG: MerchItem[] = [
     id: 6,
     title: "Drinkfles ‘Mistrust’",
     shortDescription:
-      "BPA-vrij volgens ons. (Controleer zelf. Vertrouw niemand, vooral geen etiketten.)",
+      "Geborsteld staal, lasergravure: duiven op kabels als printplaat-sporen. BPA-vrij volgens ons — controleer zelf.",
     votes: 12,
     category: "Drank & servies",
-    imagePrompt: "metal water bottle matte black pigeon sticker product photography",
+    imagePrompt:
+      "Hyper detailed brushed stainless steel insulated bottle 750ml product photo, laser etched flock of pigeons on power lines as circuit traces, micro motto Trust No One, matte black rubber ring, condensation droplets, dark marble slab, dramatic side light, visible brushed metal grain macro, luxury water bottle aesthetic",
   },
   {
     id: 7,
@@ -100,10 +102,11 @@ export const MERCH_CATALOG: MerchItem[] = [
     id: 9,
     title: "Hoodie zwart deluxe",
     shortDescription:
-      "Capuchon diep genoeg om je identiteit te verbergen — of je schaamte na een slechte take.",
+      "Zwart fleece, capuchon met ton-sur-ton duivenveren-jacquard, borstpatch met laserduif. Verberg je identiteit — of je slechte take.",
     votes: 45,
     category: "Kleding",
-    imagePrompt: "black hoodie merchandise mockup minimal studio lighting",
+    imagePrompt:
+      "Luxury black heavyweight fleece hoodie flat lay, hood lining tonal jacquard overlapping pigeon feathers subtle antenna threads, chest embroidered pigeon silhouette patch red stitched laser glint eye, gunmetal cord eyelets chunky rib cuffs, triple softbox lighting extreme fleece texture macro, hype streetwear lookbook 8k",
   },
   {
     id: 10,
@@ -235,10 +238,11 @@ export const MERCH_CATALOG: MerchItem[] = [
     id: 24,
     title: "Rugzak mini",
     shortDescription:
-      "Compact genoeg voor een fles water en een map met ‘bewijs’ van 4 pagina’s.",
+      "Canvas mini-rugzak met goudbroodkruimel-borduursel en kleine duif — voor je fles water en je map van vier pagina’s ‘bewijs’.",
     votes: 55,
     category: "Kleding",
-    imagePrompt: "small black backpack streetwear product photo",
+    imagePrompt:
+      "Compact black waxed canvas mini backpack product shot, gold embroidery trail of bread crumbs to tiny dove on front pocket, zipper pulls like golden crumb nuggets, aged parchment tag faint conspiracy doodles, brass buckles mesh pocket, grey concrete floor crisp key light, streetwear accessory macro 8k",
   },
   {
     id: 25,
@@ -262,10 +266,11 @@ export const MERCH_CATALOG: MerchItem[] = [
     id: 27,
     title: "Zonnebril ‘Te dichtbij’",
     shortDescription:
-      "Donkere glazen voor wie de waarheid te fel vindt. UV-bescherming: volgens etiket ja.",
+      "Acetaat zwart, gegraveerde tempels met veer- en golfmotief; spiegellens reflecteert mini-duif. UV volgens etiket — twijfel is gezond.",
     votes: 70,
     category: "Kleding",
-    imagePrompt: "sunglasses product shot stylish black frames",
+    imagePrompt:
+      "Ultra macro black acetate sunglasses three quarter view, charcoal mirrored lenses reflect miniature pigeons and power lines, laser etched temples feather and radio wave filigree, velvet case corner bokeh, cinematic low key gradient, luxury eyewear campaign hyperdetail 8k",
   },
   {
     id: 28,
@@ -541,10 +546,11 @@ export const MERCH_CATALOG: MerchItem[] = [
     id: 58,
     title: "Polo premium",
     shortDescription:
-      "Netjes genoeg voor een gemeenteraad, gek genoeg voor een complotborrel.",
+      "Piqué zwart met ton-sur-ton duiven en broodkruimels in jacquard, knopen met subtiele pootafdruk. Gemeenteraad overdag, complotborrel ’s avonds.",
     votes: 42,
     category: "Kleding",
-    imagePrompt: "black polo shirt merchandise minimal product",
+    imagePrompt:
+      "Mannequin torso black premium cotton pique polo, tonal jacquard flying pigeons and scattered bread crumb dots on chest and sleeves, mother of pearl buttons tiny dove footprints etched, sleeve shield crest patch pigeon laurel wreath, crisp collar soft grey seamless backdrop fashion ecommerce hero 8k",
   },
 ];
 

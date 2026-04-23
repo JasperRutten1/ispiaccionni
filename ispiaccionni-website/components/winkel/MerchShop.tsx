@@ -36,13 +36,13 @@ export function MerchShop() {
           Stemmenwinkel I Spiaccionni
         </h1>
         <p className="max-w-3xl text-gray-200">
-          Hier koop je niets echts — je wisselt fictieve <strong>stemmen voor I Spiaccionni</strong>{" "}
-          in tegen merchandise die bestaat tussen droom en dossier. Geen checkout, wél karakter.
+          Hier koop je echt alles — je wisselt <strong>stemmen voor I Spiaccionni</strong>{" "}
+          in tegen merchandise die bestaat tussen droom en dossier. Echt.
         </p>
         <ul className="mt-4 flex flex-wrap gap-2 text-xs text-gray-300">
-          <li className="rounded-full bg-gray-800 px-3 py-1">Geen echte levering</li>
-          <li className="rounded-full bg-gray-800 px-3 py-1">Stemmen zijn fictief</li>
-          <li className="rounded-full bg-gray-800 px-3 py-1">Levertijd: conceptueel</li>
+          <li className="rounded-full bg-gray-800 px-3 py-1">Echte levering</li>
+          <li className="rounded-full bg-gray-800 px-3 py-1">Stemmen Stemmen op I Spiaccionni</li>
+          <li className="rounded-full bg-gray-800 px-3 py-1">Levertijd: na checkout</li>
         </ul>
       </header>
 
@@ -60,8 +60,8 @@ export function MerchShop() {
 
       <footer className="rounded-lg border border-gray-600 bg-gray-900/40 p-4 text-sm text-gray-300">
         <p>
-          Deze winkel is satire. Er gaat geen geld, geen stemrecht en geen postduif de deur uit.
-          Productfoto’s kunnen AI-gegenereerd zijn; inhoudelijke nonsens is mensenwerk (of toch
+          Deze winkel is de enige echte. Er gaat geen geld, geen stemrecht en geen postduif de deur uit.
+          Productfoto’s kunnen echt zijn, denk jij dat alles echt is? inhoudelijke nonsens is mensenwerk (of toch
           duivenwerk — wie zal het zeggen).
         </p>
       </footer>

@@ -43,10 +43,10 @@ export function CheckoutView() {
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-6">
-      <h1 className="text-3xl font-semibold text-amber-200">Afrekenen (nep)</h1>
+      <h1 className="text-3xl font-semibold text-amber-200">Afrekenen</h1>
       <p className="text-sm text-gray-300">
-        Dit formulier doet letterlijk niks met je data — het is theater. Je bestelling bestaat
-        enkel in je hoofd en in deze browser.
+        Dit formulier doet letterlijk niks met je data — Zover jij weet. Je bestelling bestaat
+        enkel in je hoofd en in deze browser. Maar het is echt.
       </p>
 
       <section className="rounded-lg bg-gray-700 p-4">
@@ -97,7 +97,7 @@ export function CheckoutView() {
           type="submit"
           className="mt-2 rounded-md bg-amber-500 px-4 py-3 font-semibold text-black hover:bg-amber-400"
         >
-          Bevestig bestelling (fake)
+          Bevestig bestelling
         </button>
       </form>
 
