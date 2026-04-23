@@ -16,10 +16,8 @@ export function MerchCard({ item }: MerchCardProps) {
       <div className="relative aspect-square w-full bg-gray-900">
         <MerchImage
           id={item.id}
-          imagePrompt={item.imagePrompt}
           alt={item.title}
           fill
-          remoteSize={512}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover"
           loading="lazy"

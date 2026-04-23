@@ -41,10 +41,8 @@ export function MandView() {
               <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-md bg-gray-900">
                 <MerchImage
                   id={merch.id}
-                  imagePrompt={merch.imagePrompt}
                   alt={merch.title}
                   fill
-                  remoteSize={256}
                   sizes="96px"
                   className="object-cover"
                 />

@@ -11,8 +11,6 @@ export type MerchItem = {
   shortDescription: string;
   votes: number;
   category: MerchCategory;
-  /** English prompt for image API */
-  imagePrompt: string;
 };
 
 export const MERCH_CATEGORIES: MerchCategory[] = [
@@ -31,7 +29,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor koffie die net zo bitter is als de waarheid. Officieel geen afluisterapparaat in het oor.",
     votes: 5,
     category: "Drank & servies",
-    imagePrompt: "product photo white ceramic coffee mug conspiracy pigeon theme minimal studio",
   },
   {
     id: 2,
@@ -40,8 +37,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Zwaar katoen, frontprint met duif-in-zonnebril, kabelmotief en ‘I Spiaccionni’-typo. Klaar om te knielen bij het voederen van ‘duiven’.",
     votes: 10,
     category: "Kleding",
-    imagePrompt:
-      "Ultra detailed black heavyweight cotton t-shirt flat lay weathered wood, intricate screen print pigeon in aviator shades CCTV glints in lenses, tangled power lines USB cord border cracked eggshell frame distressed newsprint collage, woven label Mistrust, moody rim light shallow DOF premium streetwear catalog 8k",
   },
   {
     id: 3,
@@ -50,7 +45,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Extra dik glas: ideaal als je plots schrikt van een duif die je aanstikt.",
     votes: 6,
     category: "Drank & servies",
-    imagePrompt: "glass tea cup conspiracy meme style product photo",
   },
   {
     id: 4,
@@ -59,7 +53,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Hydratatie voor wie begrijpt dat kruimels tactiek zijn van het Ministerie van Gevederde Zaken.",
     votes: 7,
     category: "Drank & servies",
-    imagePrompt: "plastic reusable cup funny conspiracy slogan merchandise photo",
   },
   {
     id: 5,
@@ -68,7 +61,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Klein glas, grote claims. Niet geschikt voor echte dossiers — wél voor moraal.",
     votes: 8,
     category: "Drank & servies",
-    imagePrompt: "tiny shot glass branded ASU surveillance joke product photo",
   },
   {
     id: 6,
@@ -77,8 +69,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Geborsteld staal, lasergravure: duiven op kabels als printplaat-sporen. BPA-vrij volgens ons — controleer zelf.",
     votes: 12,
     category: "Drank & servies",
-    imagePrompt:
-      "Hyper detailed brushed stainless steel insulated bottle 750ml product photo, laser etched flock of pigeons on power lines as circuit traces, micro motto Trust No One, matte black rubber ring, condensation droplets, dark marble slab, dramatic side light, visible brushed metal grain macro, luxury water bottle aesthetic",
   },
   {
     id: 7,
@@ -87,7 +77,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor rode wijn en rode draadjes. Opent ook flessen, naar verluidt.",
     votes: 15,
     category: "Drank & servies",
-    imagePrompt: "wine corkscrew premium product photo dark background",
   },
   {
     id: 8,
@@ -96,7 +85,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Met rugprint voor wie achter zich durft te kijken. Spoiler: er staat een duif.",
     votes: 15,
     category: "Kleding",
-    imagePrompt: "t-shirt back print pigeon eyes funny merchandise",
   },
   {
     id: 9,
@@ -105,8 +93,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Zwart fleece, capuchon met ton-sur-ton duivenveren-jacquard, borstpatch met laserduif. Verberg je identiteit — of je slechte take.",
     votes: 45,
     category: "Kleding",
-    imagePrompt:
-      "Luxury black heavyweight fleece hoodie flat lay, hood lining tonal jacquard overlapping pigeon feathers subtle antenna threads, chest embroidered pigeon silhouette patch red stitched laser glint eye, gunmetal cord eyelets chunky rib cuffs, triple softbox lighting extreme fleece texture macro, hype streetwear lookbook 8k",
   },
   {
     id: 10,
@@ -115,7 +101,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Warm vanbinnen, koud vanbuiten. Net zoals de relatie met de overheid.",
     votes: 50,
     category: "Kleding",
-    imagePrompt: "hoodie with humorous USB pigeon joke print product photo",
   },
   {
     id: 11,
@@ -124,7 +109,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Rechte klep: handig tegen zon én tegen duiven die te laag vliegen.",
     votes: 25,
     category: "Kleding",
-    imagePrompt: "black snapback cap merchandise embroidered pigeon logo",
   },
   {
     id: 12,
@@ -133,7 +117,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Oren warm, complotten warmer. Past onder een helm van een spotter.",
     votes: 22,
     category: "Kleding",
-    imagePrompt: "wool beanie hat dark gray product shot",
   },
   {
     id: 13,
@@ -142,7 +125,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Zachte stap, harde blik. Combineer met sandalen op eigen risico.",
     votes: 18,
     category: "Kleding",
-    imagePrompt: "funny socks pigeon eyes pattern product flat lay",
   },
   {
     id: 14,
@@ -151,7 +133,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Antislip. Want als je uitglijdt, lachen ze — en ‘zij’ horen dat.",
     votes: 20,
     category: "Kleding",
-    imagePrompt: "rubber bathroom slippers simple black product photo",
   },
   {
     id: 15,
@@ -160,7 +141,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Rode trui, witte leugens, groene duiven? Iets met kleuren. Feestelijk genoeg.",
     votes: 35,
     category: "Kleding",
-    imagePrompt: "ugly christmas sweater style pigeon joke knit pattern",
   },
   {
     id: 16,
@@ -169,7 +149,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor op je revers, je rugzak of je ziel. Klein maar verdacht.",
     votes: 8,
     category: "Stickers & papier",
-    imagePrompt: "small enamel pin pigeon conspiracy cute product macro",
   },
   {
     id: 17,
@@ -178,7 +157,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Mat gelamineerd — of toch niet? Plak het op je laptop en word gevolgd door complimenten.",
     votes: 10,
     category: "Stickers & papier",
-    imagePrompt: "sheet of vinyl stickers pigeon memes flat lay",
   },
   {
     id: 18,
@@ -187,7 +165,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Maakt je toestel onleesbaar voor… iemand. Zeker niet voor jezelf, hopelijk.",
     votes: 14,
     category: "Stickers & papier",
-    imagePrompt: "laptop covered in funny stickers pigeon theme",
   },
   {
     id: 19,
@@ -196,7 +173,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "A2-formaat. Hang hem op waar buren het zeker zien. Sociale cohesie gegarandeerd.",
     votes: 25,
     category: "Stickers & papier",
-    imagePrompt: "wanted poster parody pigeon illustration wall art",
   },
   {
     id: 20,
@@ -205,7 +181,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Gelijnd papier voor waarnemingen. Eerste regel: ‘Niet te dichtbij komen.’",
     votes: 16,
     category: "Stickers & papier",
-    imagePrompt: "notebook field notes style black cover product",
   },
   {
     id: 21,
@@ -214,7 +189,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Houdt pennen rechtop. Houdt geheimen scheef. Decoratief absurdisme.",
     votes: 30,
     category: "Absurdisme",
-    imagePrompt: "desk pen holder shaped like usb port joke office product",
   },
   {
     id: 22,
@@ -223,7 +197,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Ruim genoeg voor muis én paranoia. Glad oppervlak, ruwe werkelijkheid.",
     votes: 28,
     category: "Stickers & papier",
-    imagePrompt: "extra large mousepad desk mat dark humor pigeon print",
   },
   {
     id: 23,
@@ -232,7 +205,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor brood — dat gewoon brood is. Of toch? Boodschappen doen met attitude.",
     votes: 20,
     category: "Kleding",
-    imagePrompt: "canvas tote bag merchandise pigeon graphic product",
   },
   {
     id: 24,
@@ -241,8 +213,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Canvas mini-rugzak met goudbroodkruimel-borduursel en kleine duif — voor je fles water en je map van vier pagina’s ‘bewijs’.",
     votes: 55,
     category: "Kleding",
-    imagePrompt:
-      "Compact black waxed canvas mini backpack product shot, gold embroidery trail of bread crumbs to tiny dove on front pocket, zipper pulls like golden crumb nuggets, aged parchment tag faint conspiracy doodles, brass buckles mesh pocket, grey concrete floor crisp key light, streetwear accessory macro 8k",
   },
   {
     id: 25,
@@ -251,7 +221,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Metaal. Klinkt mysterieus in je broekzak. Is gewoon een sleutelhanger.",
     votes: 12,
     category: "Stickers & papier",
-    imagePrompt: "metal keychain pigeon silhouette minimalist product",
   },
   {
     id: 26,
@@ -260,7 +229,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Past ‘bijna’ op elke gsm. Net zo universeel als onze theorieën.",
     votes: 38,
     category: "Absurdisme",
-    imagePrompt: "phone case generic black humor sticker pigeon",
   },
   {
     id: 27,
@@ -269,8 +237,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Acetaat zwart, gegraveerde tempels met veer- en golfmotief; spiegellens reflecteert mini-duif. UV volgens etiket — twijfel is gezond.",
     votes: 70,
     category: "Kleding",
-    imagePrompt:
-      "Ultra macro black acetate sunglasses three quarter view, charcoal mirrored lenses reflect miniature pigeons and power lines, laser etched temples feather and radio wave filigree, velvet case corner bokeh, cinematic low key gradient, luxury eyewear campaign hyperdetail 8k",
   },
   {
     id: 28,
@@ -279,7 +245,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Tegen regen, tegen drones? In elk geval tegen nat haar tijdens stake-outs.",
     votes: 32,
     category: "Kleding",
-    imagePrompt: "black umbrella product photography minimal",
   },
   {
     id: 29,
@@ -288,7 +253,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Groot genoeg om jezelf te verstoppen als er een duif landt op je picknickmand.",
     votes: 42,
     category: "Kleding",
-    imagePrompt: "beach towel pigeon pattern funny product",
   },
   {
     id: 30,
@@ -297,7 +261,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor wie kookt met passie en eet met wantrouwen. Vlekken zijn ‘bewijs’.",
     votes: 35,
     category: "Kleding",
-    imagePrompt: "kitchen apron black simple typography humor",
   },
   {
     id: 31,
@@ -306,7 +269,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Hittebestendig volgens de mythe. Net als onze hoop op transparantie.",
     votes: 24,
     category: "Drank & servies",
-    imagePrompt: "oven mitts pair kitchen product photo",
   },
   {
     id: 32,
@@ -315,7 +277,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Houdt drankjes koud en gesprekken warm. Op eigen risico op het plein.",
     votes: 30,
     category: "Drank & servies",
-    imagePrompt: "portable cooler bag cans picnic product",
   },
   {
     id: 33,
@@ -324,7 +285,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Klinkt scherp. Geschikt om aandacht te trekken — of duiven te irriten.",
     votes: 18,
     category: "Absurdisme",
-    imagePrompt: "plastic whistle toy yellow product photo joke",
   },
   {
     id: 34,
@@ -333,7 +293,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Plastic lens, echte intentie. Voor kinderen die vroeg willen ‘wakker’ worden.",
     votes: 45,
     category: "Absurdisme",
-    imagePrompt: "toy binoculars plastic colorful product",
   },
   {
     id: 35,
@@ -342,7 +301,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Maakt geluiden. Ontvangt vooral uw verbeelding. Top voor rollenspel A.S.U.",
     votes: 50,
     category: "Absurdisme",
-    imagePrompt: "toy walkie talkies bright plastic product photo",
   },
   {
     id: 36,
@@ -351,7 +309,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Fles met vertrouwen. Inhoud: lucht en dromen. Niet inspruiten in USB-poorten.",
     votes: 22,
     category: "Absurdisme",
-    imagePrompt: "spray bottle labeled placebo joke product photo",
   },
   {
     id: 37,
@@ -360,7 +317,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Knippert willekeurig. Bewezen niet-wetenschappelijk. Wel hilarisch op feestjes.",
     votes: 60,
     category: "Absurdisme",
-    imagePrompt: "small gadget led blink toy bread crumb joke product",
   },
   {
     id: 38,
@@ -369,7 +325,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Opslagcapaciteit: symbolisch. Geschikt om ‘bewijs’ te verplaatsen tussen laptops.",
     votes: 55,
     category: "Absurdisme",
-    imagePrompt: "usb flash drive shaped like pigeon cute product",
   },
   {
     id: 39,
@@ -378,7 +333,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "10.000 mAh volgens doos. De doos liegt nooit — toch?",
     votes: 90,
     category: "Absurdisme",
-    imagePrompt: "power bank black brick sticker pigeon humor product",
   },
   {
     id: 40,
@@ -387,7 +341,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Premium verpakking, minimale inhoud. Conceptuele kunst voor techsceptici.",
     votes: 120,
     category: "Absurdisme",
-    imagePrompt: "empty electronics box premium parody product",
   },
   {
     id: 41,
@@ -396,7 +349,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Geprint op dik papier. Officieel nergens erkend. Emotioneel wél goud waard.",
     votes: 75,
     category: "Stickers & papier",
-    imagePrompt: "funny diploma certificate pigeon specialist parody",
   },
   {
     id: 42,
@@ -405,7 +357,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Veiligheid eerst — vooral voor uw ego. Met elastiek en ambitie.",
     votes: 85,
     category: "Absurdisme",
-    imagePrompt: "cardboard helmet DIY joke costume product",
   },
   {
     id: 43,
@@ -414,7 +365,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Zichtbaar voor auto’s, onzichtbaar voor het systeem (niet echt).",
     votes: 48,
     category: "Kleding",
-    imagePrompt: "high visibility safety vest product photo",
   },
   {
     id: 44,
@@ -423,7 +373,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Scherm toont ‘Zoekend…’ voor altijd. Poëtisch, niet praktisch.",
     votes: 95,
     category: "Absurdisme",
-    imagePrompt: "toy gps device prop silly product photo",
   },
   {
     id: 45,
@@ -432,7 +381,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Beperkt zicht, onbeperkte vibes. Breekbaar — net als complotten.",
     votes: 65,
     category: "Absurdisme",
-    imagePrompt: "cardboard night vision goggles craft joke",
   },
   {
     id: 46,
@@ -441,7 +389,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor korte speeches op het plein. Batterijen: ‘ergens’.",
     votes: 40,
     category: "Absurdisme",
-    imagePrompt: "mini megaphone toy red product photography",
   },
   {
     id: 47,
@@ -450,7 +397,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Richt nooit op vliegtuigen. Of duiven. Of buren. Of toch?",
     votes: 28,
     category: "Absurdisme",
-    imagePrompt: "laser pointer pen product photo warning humor label",
   },
   {
     id: 48,
@@ -459,7 +405,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Tijd is een illusie. De klok ook. Hangt filosofisch mooi in de woonkamer.",
     votes: 88,
     category: "Absurdisme",
-    imagePrompt: "wall clock no hands surreal product photo",
   },
   {
     id: 49,
@@ -468,7 +413,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Dobbelstenen, kaarten, ruzie. Regels bewust vaag — net als echte dossiers.",
     votes: 110,
     category: "Absurdisme",
-    imagePrompt: "board game box fictional spy pigeon theme product",
   },
   {
     id: 50,
@@ -477,7 +421,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voelt zwaar. Klinkt hol. Ideaal cadeau voor wie alles al denkt te weten.",
     votes: 150,
     category: "Absurdisme",
-    imagePrompt: "luxury gift box closed ribbon mysterious product",
   },
   {
     id: 51,
@@ -486,7 +429,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Glanzend plastic, matige privileges. Wel vooraan in de rij van uw verbeelding.",
     votes: 200,
     category: "Premium / dieren",
-    imagePrompt: "laminated vip card prop glossy humorous",
   },
   {
     id: 52,
@@ -495,7 +437,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Uniek kunstwerk. Onduidelijke handtekening. Authenticiteit: emotioneel.",
     votes: 180,
     category: "Premium / dieren",
-    imagePrompt: "scribble signature on paper framed joke collectible",
   },
   {
     id: 53,
@@ -504,7 +445,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Keramische tegel met typfouten. Hangt mooi naast uw diploma’s van niets.",
     votes: 220,
     category: "Premium / dieren",
-    imagePrompt: "ceramic tile award humorous text product",
   },
   {
     id: 54,
@@ -513,7 +453,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "15 minuten spanning. Kostuum kwaliteit: discussieerbaar. Herinnering: onbetaalbaar.",
     votes: 350,
     category: "Premium / dieren",
-    imagePrompt: "person in pigeon mascot costume funny event photo",
   },
   {
     id: 55,
@@ -522,7 +461,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Levendige service. Levert brieven — als de wind mee zit en de duif niet oplaadt.",
     votes: 500,
     category: "Premium / dieren",
-    imagePrompt: "carrier pigeon mail bag cinematic realistic bird portrait",
   },
   {
     id: 56,
@@ -531,7 +469,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Voor wie weet dat elektriciteitsdraden eigenlijk laadstations zijn.",
     votes: 5,
     category: "Drank & servies",
-    imagePrompt: "coffee mug power lines graphic funny pigeon charging joke",
   },
   {
     id: 57,
@@ -540,7 +477,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Officieel onofficieel. Plakken op eigen risico — en dat van uw leaseauto.",
     votes: 9,
     category: "Stickers & papier",
-    imagePrompt: "government parody seal sticker pigeon ministry humor",
   },
   {
     id: 58,
@@ -549,8 +485,6 @@ export const MERCH_CATALOG: MerchItem[] = [
       "Piqué zwart met ton-sur-ton duiven en broodkruimels in jacquard, knopen met subtiele pootafdruk. Gemeenteraad overdag, complotborrel ’s avonds.",
     votes: 42,
     category: "Kleding",
-    imagePrompt:
-      "Mannequin torso black premium cotton pique polo, tonal jacquard flying pigeons and scattered bread crumb dots on chest and sleeves, mother of pearl buttons tiny dove footprints etched, sleeve shield crest patch pigeon laurel wreath, crisp collar soft grey seamless backdrop fashion ecommerce hero 8k",
   },
 ];
 

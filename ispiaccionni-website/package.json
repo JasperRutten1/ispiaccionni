@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "fetch-merch-images": "node scripts/fetch-merch-images.mjs"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.2.4",
