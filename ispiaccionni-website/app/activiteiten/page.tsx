@@ -6,14 +6,14 @@ export default function ActiviteitenPage() {
       <h2 className="mb-4 text-4xl font-semibold text-amber-200">Activiteiten</h2>
       <div className="flex flex-col lg:flex-row gap-5">
         <Activity
-          image="/images/melken.jpeg"
-          title="Duiven melken"
-          description="We zullen samen ondervinden of duiven ook zat hun weg terug naar huis vinden. "
-        />
-        <Activity
           image="/images/shooting.jpeg"
           title="Kleiduif Schieten"
           description="We gaan onze shiet skills oefenen om van ver alle duiven kunnen stoppen met opladedn op de elekticiteitskabels."
+        />
+        <Activity
+          image="/images/melken.jpeg"
+          title="Duiven melken"
+          description="We zullen samen ondervinden of duiven ook zat hun weg terug naar huis vinden. "
         />
         <Activity
           image="/images/rip.jpeg"
