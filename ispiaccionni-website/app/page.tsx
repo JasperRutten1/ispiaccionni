@@ -1,7 +1,22 @@
+'use client';
+
 import { HomeClayEntry } from "@/components/HomeClayEntry";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const [clickCount, setClickCount] = useState(0);
+  const router = useRouter();
+
+  const handleGifClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    if (newCount === 5) {
+      router.push('/poop');
+    }
+  };
+
   return (
     <main className="mx-5 lg:mx-15 my-10 rounded-md bg-gray-800 p-5 lg:p-10 text-white">
       <div className="w-full flex justify-center flex-wrap gap-2">
@@ -14,11 +29,12 @@ export default function Home() {
         />
 
         <Image
-          className="border-solid border-2 border-black rounded-md w-50"
+          className="border-solid border-2 border-black rounded-md w-50 cursor-pointer"
           src="/images/pigeon-vibes.gif"
           width={500}
           height={500}
           alt="Pigeons are a lie"
+          onClick={handleGifClick}
         />
       </div>
 
