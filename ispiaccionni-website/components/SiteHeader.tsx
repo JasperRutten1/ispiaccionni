@@ -39,6 +39,9 @@ export function SiteHeader() {
             <Link href="/activiteiten" className="text-amber-100 hover:text-white">
               Activiteiten
             </Link>
+            <Link href="/arcade" className="text-amber-100 hover:text-white">
+              Arcade
+            </Link>
             <Link href="/winkel" className="text-amber-100 hover:text-white">
               Winkel
             </Link>
