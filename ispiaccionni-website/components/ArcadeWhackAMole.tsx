@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 
 const HOLES = 9;
 const ROUND_SEC = 60;
@@ -140,13 +141,18 @@ export function ArcadeWhackAMole() {
 
   const whack = (index: number) => {
     if (phase !== "playing") return;
-    setActiveMoles((prev) => {
-      if (!prev.has(index)) return prev;
-      setScore((s) => s + 1);
-      const next = new Set(prev);
-      next.delete(index);
-      return next;
+    let hit = false;
+    // React 19 can defer functional updaters; flush so `hit` is set before scoring.
+    flushSync(() => {
+      setActiveMoles((prev) => {
+        if (!prev.has(index)) return prev;
+        hit = true;
+        const next = new Set(prev);
+        next.delete(index);
+        return next;
+      });
     });
+    if (hit) setScore((s) => s + 1);
   };
 
   const showTitle = phase === "idle";
@@ -250,7 +256,16 @@ export function ArcadeWhackAMole() {
             <button
               key={i}
               type="button"
-              onClick={() => whack(i)}
+              onPointerDown={(e) => {
+                if (e.button !== 0) return;
+                e.preventDefault();
+                whack(i);
+              }}
+              onKeyDown={(e) => {
+                if (e.key !== "Enter" && e.key !== " ") return;
+                e.preventDefault();
+                whack(i);
+              }}
               aria-label={`Gat ${i + 1}`}
               className="relative flex h-20 items-end justify-center overflow-hidden rounded-full border-[3px] border-neutral-900 bg-gradient-to-b from-neutral-900 to-black shadow-[inset_0_6px_12px_rgba(0,0,0,0.9)] sm:h-[5.25rem] sm:border-4 md:h-24"
             >
