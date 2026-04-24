@@ -154,12 +154,14 @@ export function ArcadeWhackAMole() {
 
   return (
     <div className="relative z-0 select-none rounded-xl border-4 border-neutral-700 bg-gradient-to-b from-neutral-600 via-neutral-800 to-neutral-900 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.45)] md:p-4">
-      {/* Marquee */}
-      <div className="relative z-20 mb-2 rounded-md border border-amber-700/50 bg-gradient-to-r from-neutral-900 via-amber-950 to-neutral-900 px-3 py-2 text-center">
-        <p className="text-xs font-bold tracking-[0.12em] text-amber-300 md:text-sm md:tracking-[0.18em]">
+      {/* Marquee — arcade-style wide lettering */}
+      <div className="relative z-20 mb-2 rounded-lg border-2 border-amber-600/60 bg-gradient-to-r from-neutral-950 via-amber-950 to-neutral-950 px-4 py-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_4px_14px_rgba(0,0,0,0.45)] md:mb-3 md:rounded-xl md:px-6 md:py-4">
+        <p className="text-lg font-black uppercase leading-none tracking-[0.08em] text-amber-200 [text-shadow:0_0_18px_rgba(251,191,36,0.45),0_2px_0_#1a0a0a,0_4px_12px_rgba(0,0,0,0.6)] sm:text-xl md:text-2xl md:tracking-[0.12em] lg:text-3xl">
           WHACK-A-VIRTUS
         </p>
-        <p className="text-[10px] text-amber-100/70 md:text-xs">I SPIACCIONNI ARCADE</p>
+        <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-amber-100/80 md:mt-2 md:text-sm md:tracking-[0.35em]">
+          I SPIACCIONNI ARCADE
+        </p>
       </div>
 
       {/* Screen bezel — above playfield so moles never paint over it */}
