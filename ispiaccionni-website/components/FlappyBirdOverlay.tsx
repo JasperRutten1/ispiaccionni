@@ -13,6 +13,10 @@ const PIPE_W = 56;
 const PIPE_SPEED = 2.35;
 const GAP_H = 138;
 const PIPE_SPAWN_EVERY = 1750;
+/** Physics simulation step (seconds). Game constants are tuned for this rate. */
+const PHYSICS_DT = 1 / 60;
+/** Do not spiral if a tab was hidden; cap catch-up steps per frame. */
+const MAX_PHYSICS_STEPS_PER_FRAME = 5;
 const SKY_TOP = "#87CEEB";
 const SKY_BOTTOM = "#E0F6FF";
 const PIPE_COLOR = "#2d6a32";
@@ -215,7 +219,8 @@ export function FlappyBirdOverlay({ open, onClose }: Props) {
         return false;
       };
 
-      const updatePlaying = (now: number) => {
+      /** One fixed physics step (60 Hz). Same order as the original per-frame update. */
+      const stepPhysics = (now: number) => {
         birdVy += GRAVITY;
         birdY += birdVy;
 
@@ -276,17 +281,31 @@ export function FlappyBirdOverlay({ open, onClose }: Props) {
       canvas.addEventListener("pointerdown", onPointerDown);
       window.addEventListener("keydown", onKeyDown);
 
+      let lastFrameTime = performance.now();
+      let physicsAccum = 0;
+
       const loop = (now: number) => {
         if (cancelled) return;
 
         if (phase === "playing") {
-          updatePlaying(now);
-          if (checkCollision()) {
-            phase = "gameover";
-            setGameOverScore(score);
-            drawFrame(false, now);
-            return;
+          const realDt = Math.min((now - lastFrameTime) / 1000, 0.25);
+          lastFrameTime = now;
+          physicsAccum += realDt;
+
+          let steps = 0;
+          while (physicsAccum >= PHYSICS_DT && steps < MAX_PHYSICS_STEPS_PER_FRAME) {
+            stepPhysics(now);
+            physicsAccum -= PHYSICS_DT;
+            steps += 1;
+            if (checkCollision()) {
+              phase = "gameover";
+              setGameOverScore(score);
+              drawFrame(false, now);
+              return;
+            }
           }
+        } else {
+          lastFrameTime = now;
         }
 
         drawFrame(phase === "ready", now);
