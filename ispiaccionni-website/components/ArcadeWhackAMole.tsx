@@ -10,6 +10,7 @@ const SPAWN_MS_FAST = 720;
 /** Longest gap at round start (gentle warm-up). */
 const SPAWN_MS_SLOW = 1700;
 const MOLE_MS = 1050;
+const MOLE_IMG = "/images/virtus.jpg";
 
 type Phase = "idle" | "playing";
 
@@ -215,7 +216,7 @@ export function ArcadeWhackAMole() {
                   <span className="font-bold text-amber-200 tabular-nums">{timeLeft}s</span>
                 </span>
               </div>
-              <p className="text-center text-xs text-amber-100/60">Sla de bruine mol!</p>
+              <p className="text-center text-xs text-amber-100/60">Sla de mol!</p>
             </div>
           )}
         </div>
@@ -239,13 +240,19 @@ export function ArcadeWhackAMole() {
               className="relative flex h-24 items-end justify-center overflow-hidden rounded-full border-4 border-neutral-900 bg-gradient-to-b from-neutral-900 to-black shadow-[inset_0_8px_16px_rgba(0,0,0,0.9)] md:h-28"
             >
               <span
-                className={`absolute bottom-0 z-20 flex h-[200%] w-[58%] flex-col items-center justify-start rounded-t-full rounded-b-full border-2 border-[#4a3220] pt-2 shadow-md transition-transform duration-[90ms] ease-out [background:linear-gradient(to_bottom,#8b5a3c_0%,#5c3d28_12%,#3d2618_22%,#1a0f0a_40%,#000_72%,#000_100%)] ${
+                className={`absolute bottom-0 z-20 h-[200%] w-[58%] overflow-hidden rounded-t-full rounded-b-full border-2 border-neutral-800 shadow-md transition-transform duration-[90ms] ease-out ${
                   activeMoles.has(i) ? "translate-y-[50%]" : "translate-y-full"
                 }`}
               >
-                <span className="flex gap-2">
-                  <span className="h-2 w-2 rounded-full bg-neutral-900/80" />
-                  <span className="h-2 w-2 rounded-full bg-neutral-900/80" />
+                <span className="relative block h-full w-full bg-[#6c0220]">
+                  <Image
+                    src={MOLE_IMG}
+                    alt="Mol"
+                    fill
+                    sizes="120px"
+                    className="select-none object-contain object-top"
+                    draggable={false}
+                  />
                 </span>
               </span>
               <span className="pointer-events-none absolute top-2 z-10 h-5 w-[55%] rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.55)_55%,transparent_78%)] shadow-[0_1px_3px_rgba(0,0,0,0.8)]" />
