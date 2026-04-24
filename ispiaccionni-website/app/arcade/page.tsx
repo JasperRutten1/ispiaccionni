@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ArcadePage() {
   return (
-    <main className="mx-auto max-w-2xl px-4 py-8 md:py-12">
+    <main className="mx-auto max-w-xl px-3 py-4 sm:px-4 md:py-8">
       <ArcadeWhackAMole />
     </main>
   );
