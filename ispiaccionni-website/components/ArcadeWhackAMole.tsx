@@ -156,8 +156,8 @@ export function ArcadeWhackAMole() {
     <div className="relative z-0 select-none rounded-xl border-4 border-neutral-700 bg-gradient-to-b from-neutral-600 via-neutral-800 to-neutral-900 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.45)] md:p-4">
       {/* Marquee */}
       <div className="relative z-20 mb-2 rounded-md border border-amber-700/50 bg-gradient-to-r from-neutral-900 via-amber-950 to-neutral-900 px-3 py-2 text-center">
-        <p className="text-xs font-bold tracking-[0.35em] text-amber-300 md:text-sm">
-          WHACK-A-MOLE
+        <p className="text-xs font-bold tracking-[0.12em] text-amber-300 md:text-sm md:tracking-[0.18em]">
+          WHACK-A-VIRTUS
         </p>
         <p className="text-[10px] text-amber-100/70 md:text-xs">I SPIACCIONNI ARCADE</p>
       </div>
@@ -171,12 +171,25 @@ export function ArcadeWhackAMole() {
           }}
         >
           <div
-            className="pointer-events-none absolute inset-0 rounded-md opacity-[0.06]"
+            className="pointer-events-none absolute inset-0 z-[2] rounded-md opacity-[0.06]"
             style={{
               backgroundImage:
                 "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px)",
             }}
           />
+
+          {phase === "playing" && (
+            <div className="pointer-events-none absolute inset-0 z-[1] flex items-center justify-center px-6 py-8">
+              <Image
+                src="/images/logo.png"
+                width={280}
+                height={280}
+                alt=""
+                aria-hidden
+                className="h-auto max-h-[min(55vh,320px)] w-[min(72vw,240px)] opacity-[0.22] brightness-90 contrast-125 drop-shadow-lg md:w-[min(60vw,280px)]"
+              />
+            </div>
+          )}
 
           {showTitle && (
             <>
@@ -206,7 +219,7 @@ export function ArcadeWhackAMole() {
           )}
 
           {showHud && (
-            <div className="relative z-10 flex w-full max-w-sm flex-col items-center gap-2 text-amber-50">
+            <div className="relative z-20 flex w-full max-w-sm flex-col items-center gap-2 text-amber-50 drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)]">
               <div className="flex w-full justify-between gap-4 font-mono text-sm md:text-base">
                 <span>
                   Score <span className="font-bold text-amber-200">{score}</span>
@@ -216,7 +229,7 @@ export function ArcadeWhackAMole() {
                   <span className="font-bold text-amber-200 tabular-nums">{timeLeft}s</span>
                 </span>
               </div>
-              <p className="text-center text-xs text-amber-100/60">Sla de mol!</p>
+              <p className="text-center text-xs text-amber-100/60">KLOPT EROP!!</p>
             </div>
           )}
         </div>
