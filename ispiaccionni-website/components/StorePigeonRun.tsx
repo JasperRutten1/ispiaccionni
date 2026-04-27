@@ -16,6 +16,8 @@ const SPEED_GROWTH_PER_SECOND = 0.08;
 const MIN_SPAWN_INTERVAL_MS = 900;
 const PIGEON_SRC = "/game/pigeon-glide.svg";
 
+type ScoreSubmitState = "idle" | "pending" | "success" | "error";
+
 type ObstacleType = "pole" | "drone";
 
 type Obstacle = {
@@ -58,6 +60,9 @@ export function StorePigeonRun() {
   const [open, setOpen] = useState(false);
   const [session, setSession] = useState(0);
   const [gameOverScore, setGameOverScore] = useState<number | null>(null);
+  const [playerName, setPlayerName] = useState("");
+  const [submitState, setSubmitState] = useState<ScoreSubmitState>("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -71,13 +76,49 @@ export function StorePigeonRun() {
     setOpen(false);
   }, []);
 
+  const submitScore = useCallback(async () => {
+    if (!playerName.trim() || gameOverScore === null) return;
+    setSubmitState("pending");
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch("/api/pigeonrun", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: playerName.trim(), score: gameOverScore }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Unable to submit score.");
+      }
+
+      setSubmitState("success");
+      setSubmitMessage("Score succesvol ingediend!");
+    } catch (error) {
+      setSubmitState("error");
+      setSubmitMessage(
+        error instanceof Error ? error.message : "Er is iets misgegaan bij het indienen."
+      );
+    }
+  }, [gameOverScore, playerName]);
+
   const restartGame = useCallback(() => {
     setGameOverScore(null);
+    setSubmitState("idle");
+    setSubmitMessage("");
     setSession((value) => value + 1);
   }, []);
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      setPlayerName("");
+      setSubmitState("idle");
+      setSubmitMessage("");
+      return;
+    }
 
     let cancelled = false;
     let innerCleanup: (() => void) | undefined;
@@ -429,6 +470,42 @@ export function StorePigeonRun() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl bg-black/65 p-4 text-center text-slate-100">
                   <p className="text-2xl font-semibold text-amber-200">Game over</p>
                   <p className="text-lg">Score: {gameOverScore}</p>
+                  <div className="grid w-full gap-3 px-4 sm:max-w-md">
+                    <label className="flex flex-col text-left text-sm text-slate-200">
+                      Naam om in te sturen
+                      <input
+                        type="text"
+                        value={playerName}
+                        onChange={(event) => setPlayerName(event.target.value)}
+                        className="mt-2 rounded-lg border border-slate-600 bg-slate-950/90 px-3 py-2 text-slate-100 outline-none ring-2 ring-transparent transition focus:border-amber-300 focus:ring-amber-400"
+                        placeholder="Bijvoorbeeld: PigeonChamp"
+                        aria-label="Spelersnaam"
+                      />
+                    </label>
+                    <button
+                      type="button"
+                      onClick={submitScore}
+                      disabled={
+                        submitState === "pending" ||
+                        submitState === "success" ||
+                        !playerName.trim()
+                      }
+                      className="rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-black hover:bg-amber-400 disabled:cursor-not-allowed disabled:bg-amber-300"
+                    >
+                      {submitState === "pending" ? "Verzenden…" : "Score indienen"}
+                    </button>
+                    {submitMessage ? (
+                      <p
+                        className={`text-sm ${
+                          submitState === "success"
+                            ? "text-emerald-300"
+                            : "text-rose-300"
+                        }`}
+                      >
+                        {submitMessage}
+                      </p>
+                    ) : null}
+                  </div>
                   <div className="flex flex-wrap justify-center gap-3">
                     <button
                       type="button"
