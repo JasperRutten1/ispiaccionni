@@ -71,6 +71,10 @@ export default function AboutPage() {
           image="/images/duiven/rat.jpeg"
           title="Rat van't stad"
         />
+        <Profile
+          image="/images/duiven/copilot.jpeg"
+          title="Piloot Duif"
+        />
       </div>
     </main>
   );
