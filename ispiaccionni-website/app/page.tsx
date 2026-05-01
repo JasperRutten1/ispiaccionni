@@ -75,6 +75,10 @@ export default function Home() {
         </p>
 
       </HomeClayEntry>
+
+      <div className="text-center mt-6">
+        <p className="opacity-50">🕊️ T:576,R:3,V:568,I:5,o:0 🕊️</p>
+      </div>
     </main>
   );
 }
